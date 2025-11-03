@@ -10,7 +10,7 @@
 <h2 align="center">🚀 Live Demo</h2>
 
 <p align="center">
-  🔗 <a href="https://your-loopstudios-demo.vercel.app/" target="_blank"><b>View Live Project</b></a>
+  🔗 <a href="https://fpaganoni.github.io/Loopstudios-website/" target="_blank"><b>View Live Project</b></a>
 </p>
 
 ---
@@ -70,9 +70,6 @@
 ```bash
 # Clone this repository
 git clone https://github.com/yourusername/loopstudios-landing-page.git
-
-# Navigate to the project directory
-cd loopstudios-landing-page
 
 # Open index.html in your browser
 ```
