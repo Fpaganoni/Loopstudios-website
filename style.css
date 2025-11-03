@@ -7,6 +7,7 @@
   --alata: "Alata", sans-serif;
   --josefinSans: "Josefin Sans", sans-serif;
 }
+
 * {
   margin: 0;
   box-sizing: border-box;
@@ -83,19 +84,27 @@ body {
   min-height: 500px;
   padding: 0;
   background-color: var(--Black);
-
   display: grid;
   place-content: center start;
   gap: 2em;
   padding-left: 5%;
-
   transform: var(--transform);
-  transition: transform 0.6s;
-  transition-timing-function: ease-in-out;
+  transition: transform 0.6s ease-in-out;
 }
 
 .nav_list {
   list-style: none;
+  background-image: linear-gradient(var(--White), var(--White));
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 0% 2px; /* ancho 0% al inicio, altura = grosor */
+  transition: background-size 300ms cubic-bezier(0.64, 0.14, 0.27, 1.04);
+  padding-bottom: 8px;
+}
+
+.nav_list:hover,
+.nav_list:focus {
+  background-size: 70% 2px; /* se expande a 100% desde el centro (posición centrada) */
 }
 
 .nav_link {
@@ -175,11 +184,18 @@ body {
   place-self: center;
   letter-spacing: 2px;
   order: 1;
+
+  &:hover {
+    background-color: var(--Black);
+    color: var(--White);
+    transition: background-color 0.3s, color 0.3s;
+  }
 }
 
 .gallery_picture {
   display: grid;
   grid-template-areas: "show";
+  cursor: pointer;
 }
 
 .gallery_picture::before {
@@ -205,6 +221,17 @@ body {
   width: 30%;
   padding: 1rem;
   font-weight: 200;
+  transition: all 0.3s ease-in-out;
+}
+
+.gallery_picture:hover .gallery_img {
+  opacity: 0.2;
+}
+
+.gallery_picture:hover::after {
+  opacity: 1.5;
+  color: var(--Black);
+  font-weight: 300;
 }
 
 .gallery_img {
@@ -212,6 +239,7 @@ body {
   height: 100%;
   object-fit: cover;
   grid-area: show;
+  transition: all 0.3s ease-in-out;
 }
 
 /*  SECTION FOOTER */
@@ -236,6 +264,17 @@ body {
 
 .footer_list {
   list-style: none;
+  background-image: linear-gradient(var(--White), var(--White));
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 0% 2px; /* ancho 0% al inicio, altura = grosor */
+  transition: background-size 300ms cubic-bezier(0.64, 0.14, 0.27, 1.04);
+  padding-bottom: 8px;
+}
+
+.footer_list:hover,
+.footer_list:focus {
+  background-size: 70% 2px; /* se expande a 100% desde el centro (posición centrada) */
 }
 
 .footer_link {
@@ -248,6 +287,20 @@ body {
   grid-auto-flow: column;
   align-items: center;
   gap: 2em;
+}
+
+.footer_icon {
+  background-image: linear-gradient(var(--White), var(--White));
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 0% 2px; /* ancho 0% al inicio, altura = grosor */
+  transition: background-size 300ms cubic-bezier(0.64, 0.14, 0.27, 1.04);
+  padding-bottom: 10px;
+}
+
+.footer_icon:hover,
+.footer_icon:focus {
+  background-size: 70% 2px; /* se expande a 100% desde el centro (posición centrada) */
 }
 
 .footer_copy {
@@ -383,5 +436,12 @@ body {
   .footer_copy {
     grid-area: copy;
     margin: 0;
+  }
+}
+
+/* reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+  .nav_list {
+    transition: none;
   }
 }
