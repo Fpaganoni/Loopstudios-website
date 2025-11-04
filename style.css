@@ -13,6 +13,13 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
 body {
   font-family: var(--alata);
 }
@@ -30,6 +37,7 @@ body {
   background-image: url(images/mobile/image-hero.jpg);
   background-size: cover;
   background-position: center;
+  position: relative;
 }
 
 .nav {
@@ -51,7 +59,7 @@ body {
 }
 
 .nav_logo {
-  z-index: 1;
+  z-index: 101;
 }
 
 .nav_hamburguer,
@@ -63,12 +71,12 @@ body {
 
 .nav_hamburguer {
   display: var(--hamburguer);
-  z-index: 1;
+  z-index: 101;
 }
 
 .nav_close {
   display: var(--close);
-  z-index: 1;
+  z-index: 101;
 }
 
 .nav_img {
@@ -76,11 +84,12 @@ body {
 }
 
 .nav_links {
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   right: 0;
   left: 0;
+  width: 100%;
   min-height: 500px;
   padding: 0;
   background-color: var(--Black);
@@ -90,6 +99,7 @@ body {
   padding-left: 5%;
   transform: var(--transform);
   transition: transform 0.6s ease-in-out;
+  z-index: 100;
 }
 
 .nav_list {
@@ -222,6 +232,7 @@ body {
   padding: 1rem;
   font-weight: 200;
   transition: all 0.3s ease-in-out;
+  z-index: 0;
 }
 
 .gallery_picture:hover .gallery_img {
